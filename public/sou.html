@@ -129,7 +129,7 @@
     <input type="submit" id="submit" style="width: 49px;margin-left: 5px;height: 32px;color: white; background: #ffa608; float: left;"/>
 </div>
 <!--     面板 -->
-<div class="sousuo">
+<div class="sousuo" >
     <div class="container">
         <div class="row" id="sou">
         </div>
@@ -153,9 +153,6 @@
 
 
 <script src="handlebars-v4.0.5.js"></script>
-<script src="js/arg-1.3.min.js"></script>
-
-
 <!--搜索到的信息使其显示到页面-->
 <script id="out" type="text/x-handlebars-template">
     {{#each wad}}
@@ -163,17 +160,17 @@
         <img src="{{pic_2}}" />
     </div>
     <div class="md">
-        <div class="wzi">
-                <img src="{{pic_1}}"/>
-                <ul>
-                    <li><p>{{name}}</p></li>
+        <div class="wzi" style="height: 250px;width: 1000px;margin: 30px auto;border: solid 1px ;border-color: #d9dbde">
+                <img src="{{pic_1}}" style="margin-top:40px;float: left;margin-left:40px"/>
+                <ul style="list-style: none;margin-top:40px;float: left;margin-left:20px;">
+                    <li style="list"><p>{{name}}</p></li>
                     <li><p>{{taste}}</p></li>
                     <li><p>{{propose}}</p></li>
                     <li><p>{{area}}</p></li>
                 </ul>
-            </div>
         </div>
     </div>
+
     {{/each}}
 </script>
 
@@ -196,7 +193,7 @@
                     var source = $('#out').html();
                     var template = Handlebars.compile(source);
                     var da = {'wad': data};
-                    $('#list').html(template(da));
+                    $('#sou').html(template(da));
 
                 },
             })
